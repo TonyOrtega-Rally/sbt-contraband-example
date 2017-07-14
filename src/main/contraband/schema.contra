@@ -1,0 +1,29 @@
+package api.schema
+@target(Scala)
+@codecTypeField("type")
+@codecPackage("api.schema.codec")
+@fullCodec("CustomProtocol")
+
+## StringStringMap https://github.com/sbt/contraband/commit/31de6f5b04ac864f53e9aec2d1d282b31d928216
+## @todo: ListStringStringMap, ListStringAnyMap, etc
+
+## schema interface
+## must be included when implemented
+interface Schema {
+  domain: api.schema.Domain!
+}
+
+## request type
+type Request implements Schema {
+  domain: api.schema.Domain!
+  result: StringStringMap!
+}
+
+## response type
+type Response implements Schema {
+  method: api.schema.Method!
+  action: api.schema.Action!
+  domain: api.schema.Domain!
+  result: StringStringMap!
+  timestamp: String!
+}

@@ -1,0 +1,31 @@
+package api.schema
+@target(Scala)
+@codecTypeField("enum")
+@codecPackage("api.schema.codec")
+
+enum Action {
+  success
+  error
+  auth
+}
+
+enum Method {
+  GET
+  POST
+  PUT
+  DELETE
+}
+
+enum Domain {
+  dashboard
+  notification
+  activity
+}
+
+## StringStringMap content
+enum Activity {
+  follow
+  followed
+  unfollow
+}
+
