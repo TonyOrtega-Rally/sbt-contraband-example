@@ -1,6 +1,6 @@
 # Example Schema using `sbt-contraband`
 
-A demonstration of some of the features provided by [sbt-contraband](https://github.com/sbt/contraband) for schema annotation and generation. This was mainly aimed at seeing what came from generating 'pseudo case classes in Scala' in relation to how expressive [sbt-contraband](https://github.com/sbt/contraband) was and to compare it to building [scala case classes](http://docs.scala-lang.org/tutorials/tour/case-classes.html) from the ground up.
+A demonstration of some of the features provided by [sbt-contraband](https://github.com/sbt/contraband). This was mainly aimed at seeing what came from generating 'pseudo case classes in Scala' via [sbt-contraband](https://github.com/sbt/contraband) and in comparison to creating [scala case classes](http://docs.scala-lang.org/tutorials/tour/case-classes.html) from the ground up.
 
 More information on both `sbt` and `sbt-contraband` can be found via the following links.
 
@@ -31,7 +31,7 @@ More information on both `sbt` and `sbt-contraband` can be found via the followi
   > :paste
   ```
 
-  You can simply edit and/or paste the following scala code into the terminal session, keying CTRL+D to start the interpretaion of input.
+  You can simply edit and/or paste the following scala code into the terminal session, keying CTRL+D to start interpretation.
 
   ```scala
   import sjsonnew.support.scalajson.unsafe.{ Converter, PrettyPrinter }
@@ -68,7 +68,7 @@ More information on both `sbt` and `sbt-contraband` can be found via the followi
   )
   ```
 
-  This should generate something like the following output:
+  This should generate something like the following:
 
   ```scala
   import sjsonnew.support.scalajson.unsafe.{Converter, PrettyPrinter}
