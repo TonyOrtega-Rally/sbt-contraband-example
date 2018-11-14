@@ -22,6 +22,8 @@ object ApiSchema {
       )
     )
 
+    case class RsClaimSet(sub: String, sid: String)
+
     val responseObject = Response(
       method = Method.POST,
       action = Action.success,
