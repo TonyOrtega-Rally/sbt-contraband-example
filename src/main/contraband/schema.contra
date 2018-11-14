@@ -17,6 +17,9 @@ interface Schema {
 type Request implements Schema {
   domain: api.schema.Domain!
   result: StringStringMap!
+  ##rel: String!
+  ##impId: String = null @since("0.2.0")
+  ##x: Int = 4 @since("0.2.0")
 }
 
 ## response type
