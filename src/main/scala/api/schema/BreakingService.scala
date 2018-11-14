@@ -8,7 +8,7 @@ import scala.collection.immutable.Map
 class BreakingService {
 
 
-  case class RsClaimSet(sub: String, sid: String, iat: String, breakingChange: String)
+  case class RsClaimSet(sub: String, sid: String, iat: String, breakingChange: String, anotherBreakingChange: String)
 
   def getRequest: Request = {
     val id = randomUUID().toString
