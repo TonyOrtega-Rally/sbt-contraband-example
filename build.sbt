@@ -1,7 +1,7 @@
 import Dependencies._
 
 // Uncomment when you're ready to start building 1.0.0-...-SNAPSHOT versions.
-rallyVersioningSnapshotLowerBound in ThisBuild := "1.0.0"
+rallyVersioningSnapshotLowerBound in ThisBuild := "3.0.0"
 
 lazy val commonSettings = Seq(
   organization := "api.schema",
