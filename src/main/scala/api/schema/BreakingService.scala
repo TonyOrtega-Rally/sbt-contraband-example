@@ -1,7 +1,6 @@
 package api.schema
 import java.util.UUID.randomUUID
 
-import jdk.nashorn.internal.ir.RuntimeNode
 
 import scala.collection.immutable.Map
 
@@ -22,6 +21,13 @@ class BreakingService {
     )
 
     requestObject
+  }
+
+  def getGreeting: Greetings = {
+    val  greetings = Greetings(sub = "sub", iss = "iss", rel = "csr", iat = None )
+
+
+    greetings
   }
 
 }
