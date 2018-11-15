@@ -30,3 +30,11 @@ type Response implements Schema {
   result: StringStringMap!
   timestamp: String!
 }
+
+## new simple test type without objects from initial example code
+type Greetings{
+ sub: String!
+ iss: String!
+ rel: String!
+ iat: String
+}
