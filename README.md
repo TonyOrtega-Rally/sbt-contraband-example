@@ -13,14 +13,44 @@ More information on both `sbt` and `sbt-contraband` can be found via the followi
 The example below will show you how to add new fields to Contraband type records (aka psuedo case classes) and pass the SemVer checks from the [Rally Versioning Plugin](https://github.com/AudaxHealthInc/rally-versioning)
 ## Start
 
+Keep a copy of this README file for your reference somewhere outside of this repository.
+Record the latest commit hash for the commit after the git tag v3.2.0. The one with the commit message ```updated ReadMe instructions``` .
+Reset your git clone back to the latest tag
+```bash
+git reset --hard v3.2.0
+HEAD is now at 86c1797 updated README to show how Greetings class can evolve and add new fields
+```
+We will publish this version in the local Ivy repository for testing
+
   ```bash
   > sbt
   > set semVerCheckOnCompile := false
   > set semVerCheckOnPublish := false
   > ;clean ;compile ;publishLocal
-  > reload
   ```
-This will initially turn off SemVer checks since you won't have anything in your local Ivy repository for SemVer to compare too. Then we will compile and publish the current version, v3.2.0 in your local ivy repo. Last we will reload the sbt console to enable the SemVer plugin again and discard the ```set semVerCheckOnCompile := false``` and ```semVerCheckOnPublish := false```  settings. 
+This will initially turn off SemVer checks since you won't have anything in your local Ivy repository for SemVer to compare too. Then we will compile and publish the current version, v3.2.0 in your local ivy repo. 
+
+Now that you have a local version published you can reset your git repo back to the latest commit.
+
+```bash
+git reset --hard <commmit hash after v3.2.0 commit>
+HEAD is now at <commmit hash after v3.2.0 commit> updated ReadMe instructions
+```
+
+Now that you have a commit on top of the last "release" we can turn on SemVer again by reloading the sbt console
+```bash
+> reload
+[info] Loading global plugins from /Users/otoniel.ortega/.sbt/0.13/plugins
+[info] Loading project definition from /Users/otoniel.ortega/test/dir2/sbt-contraband-example/project
+[info] Skipping fetching tags from git remotes; to enable, set the system property version.autoFetch=true
+[info] RallyVersioningPlugin set versionFromGit=3.2.1-1-40347ff-SNAPSHOT
+[info] RallyVersioningPlugin set version=3.2.1-1-40347ff-SNAPSHOT
+[info] RallyVersioningPlugin set isCleanRelease=true
+[warn] Discarding 2 session settings.  Use 'session save' to persist session settings.
+[info] Set current project to api-schema (in build file:/Users/otoniel.ortega/test/dir2/sbt-contraband-example/)
+```
+
+Notice that the Rally Verisioning Plugin will automatically set the next release to a patch update. However if the SemVer plugin sees more changes it will require you to bump the minor or major version if necessary.
 
 Review the Greetings class generated in the target folder by the Contraband plugin. 
 
