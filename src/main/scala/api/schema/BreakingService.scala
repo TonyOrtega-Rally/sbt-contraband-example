@@ -31,3 +31,23 @@ class BreakingService {
   }
 
 }
+
+/* //uncomment after you have the latest version in your local repo
+object BreakingService {
+  def main(args: Array[String]): Unit = {
+
+    val breakingService = new BreakingService
+
+    val greeting = breakingService.getGreeting
+
+    /* //uncomment after v3.3.0 fields are added  in schema.contra
+
+        println(Greetings.sayHi)
+       println(greeting.customToString)
+    */
+    println(greeting.toString)
+
+  }
+
+}
+*/

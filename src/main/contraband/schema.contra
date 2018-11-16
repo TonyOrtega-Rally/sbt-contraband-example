@@ -17,9 +17,6 @@ interface Schema {
 type Request implements Schema {
   domain: api.schema.Domain!
   result: StringStringMap!
-  ##rel: String!
-  ##impId: String = null @since("0.2.0")
-  ##x: Int = 4 @since("0.2.0")
 }
 
 ## response type
@@ -37,4 +34,16 @@ type Greetings{
  iss: String!
  rel: String!
  iat: String
+ reln: String = "csr" @since("3.2.0")
+ impId: String = null @since("3.2.0")
+## a: String! = "self" @since("3.3.0") ## New required field requires a default value to avoid major breaking change by SemVer
+## b: Int @since("3.3.0")             ## New optional field will default to 'None'
+## c: String @since("3.3.0")          ## New optional field will default to 'None'
+
+
+## ##inject some code for @since("3.3.0") to add new toString method
+
+## #x def customToString = s"original fields:  sub=${sub} iss=${iss} rel=${rel} iat=${iat} reln=${reln}"
+## #xcompanion def sayHi = s"Hello from the companion object"
+## #xtostring  return s"sub=${sub} iss=${iss} rel=${rel} iat=${iat} reln=${reln} impId=${impId} a=${a} b=${b} c=${c}"
 }
